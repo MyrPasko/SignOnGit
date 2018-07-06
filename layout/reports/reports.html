@@ -1,0 +1,95 @@
+<div class="reports">
+    <md-toolbar>
+        <div layout="row" layout-align="center center">
+            <md-button class="md-raised md-primary to-repos" flex="15" ng-click="vm.goToRepos()">TO REPOSITORIES
+            </md-button>
+            <div class="header-wrapper" layout="column" flex="70">
+                <span flex="100">Choose settings and create the report</span>
+            </div>
+            <md-button class="md-raised md-warn" flex="15" ng-click="vm.logOut()">LOG OUT</md-button>
+        </div>
+    </md-toolbar>
+
+    <div class="md-no-padding" ng-cloak>
+        <div layout="row" layout-wrap>
+            <div flex="100" flex-gt-sm="50" layout="column">
+                <div>
+                    <fieldset class="standard">
+                        <legend>Issues options</legend>
+                        <div layout="row" layout-wrap flex>
+                            <div flex="50" layout="column" layout-align="start start">
+                                <md-checkbox class="md-primary" ng-model="vm.checkBox.issues.name">Name</md-checkbox>
+                                <md-checkbox class="md-primary" ng-model="vm.checkBox.issues.user">User</md-checkbox>
+                            </div>
+                            <div flex="50" layout="column" layout-align="start start">
+                                <md-checkbox class="md-primary" ng-model="vm.checkBox.issues.date">Date</md-checkbox>
+                                <md-checkbox class="md-primary" ng-model="vm.checkBox.issues.status">Status
+                                </md-checkbox>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+
+            <div flex="100" flex-gt-sm="50" layout="column">
+                <div>
+                    <fieldset class="standard">
+                        <legend>Commits options</legend>
+                        <div layout="row" layout-wrap flex>
+                            <div flex="50" layout="column" layout-align="start start">
+                                <md-checkbox class="md-primary" ng-model="vm.checkBox.commits.committer">Committer
+                                </md-checkbox>
+                                <md-checkbox class="md-primary" ng-model="vm.checkBox.commits.date">Date</md-checkbox>
+                            </div>
+                            <div flex="50" layout="column" layout-align="start start">
+                                <md-checkbox class="md-primary" ng-model="vm.checkBox.commits.description">Description
+                                </md-checkbox>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <fieldset class="standard issues" ng-if="vm.checkBox.issues.name || vm.checkBox.issues.date || vm.checkBox.issues.user || vm.checkBox.issues.status">
+        <legend>Issues of {{vm.repoName}}</legend>
+        <div class="table-head" layout="row" layout-align="start start">
+            <div class="head" flex="50">Name</div>
+            <div class="head" flex="20">Date</div>
+            <div class="head" flex="15">User</div>
+            <div class="head" flex="15">Status</div>
+        </div>
+        <div class="table-row" layout="row" layout-align="start start" ng-if="vm.issues.length > 0"
+             ng-repeat="issue in vm.issues | orderBy: vm.issuesSortParam ">
+            <div class="trow" flex="50" ng-class="vm.makeInvisible(vm.checkBox.issues.name)">{{issue.title}}</div>
+            <div class="trow" flex="20" ng-class="vm.makeInvisible(vm.checkBox.issues.date)">{{issue.updated_at | date: 'hh:mm, MM/dd/yyyy'}}</div>
+            <div class="trow" flex="15" ng-class="vm.makeInvisible(vm.checkBox.issues.user)">{{issue.user.login}}</div>
+            <div class="trow" flex="15" ng-class="vm.makeInvisible(vm.checkBox.issues.status)">{{issue.state}}</div>
+        </div>
+        <div class="table-head replacer" layout="row" layout-align="center center" ng-if="vm.issues.length === 0">
+            There are no issues in {{vm.repoName}}.
+        </div>
+    </fieldset>
+
+    <fieldset class="standard commits" ng-if="vm.checkBox.commits.committer || vm.checkBox.commits.date || vm.checkBox.commits.description">
+        <legend>Commits of {{vm.repoName}}</legend>
+        <div class="table-head" layout="row" layout-align="start start">
+            <div class="head" flex="20">Committer</div>
+            <div class="head" flex="20">Date</div>
+            <div class="head" flex="60">Description</div>
+        </div>
+        <div class="table-row row-commit" layout="row" layout-align="start start" ng-if="vm.commits.length > 0"
+             ng-repeat="commit in vm.commits | orderBy: vm.commitsSortParam ">
+            <div class="trow" flex="20" ng-class="vm.makeInvisible(vm.checkBox.commits.committer)">{{commit.commit.author.name}}</div>
+            <div class="trow" flex="20" ng-class="vm.makeInvisible(vm.checkBox.commits.date)">{{commit.commit.author.date | date: 'hh:mm, MM/dd/yyyy'}}</div>
+            <div class="trow" flex="60" ng-class="vm.makeInvisible(vm.checkBox.commits.description)">{{commit.commit.message}}</div>
+        </div>
+        <div class="table-head replacer" layout="row" layout-align="center center" ng-if="vm.commits.length === 0">
+            There are no commits in {{vm.repoName}}.
+        </div>
+    </fieldset>
+
+</div>

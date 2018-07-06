@@ -1,0 +1,23 @@
+{
+  "name": "sign_on",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "MyrPasko <myroslavpasko@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.6.6",
+    "angular-base64": "^2.0.5",
+    "angular-material": "^1.1.10",
+    "angular-ui-router": "^1.0.18"
+  }
+}

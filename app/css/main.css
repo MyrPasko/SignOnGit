@@ -1,0 +1,127 @@
+.login {
+  max-height: 100%;
+  max-width: 100%;
+  position: relative; }
+  .login md-card {
+    width: 500px;
+    margin: 0 auto; }
+  .login label {
+    font-weight: 700;
+    font-size: 16px; }
+  .login .error-block {
+    margin: 5px auto;
+    color: #eb1e32; }
+  .login .alert {
+    position: absolute;
+    bottom: 50px;
+    left: 10px;
+    font-size: 18px;
+    color: #eb1e32; }
+  .login .form-block {
+    min-width: 70%;
+    background: rgba(255, 255, 255, 0.7);
+    position: relative; }
+    .login .form-block .form-logo {
+      margin: auto;
+      width: 162px;
+      height: 158px;
+      background: url("../assets/images/git-logo-new.png"); }
+    .login .form-block .form-head {
+      margin: 20px auto;
+      font-weight: 700;
+      font-size: 24px;
+      text-align: center; }
+    .login .form-block .md-button {
+      margin: 0; }
+    .login .form-block .password {
+      margin-bottom: 24px; }
+
+.repositories .blue-button {
+  margin-top: 12px; }
+
+.repositories .search {
+  position: relative; }
+  .repositories .search .alert {
+    position: absolute;
+    bottom: 16px;
+    left: 10px;
+    font-size: 18px;
+    color: #eb1e32; }
+
+.reports .md-no-padding {
+  padding: 0; }
+
+.reports .check-wrapper .check {
+  width: 50%; }
+
+.reports .check-wrapper .commit {
+  background-color: red; }
+
+body {
+  height: 100%; }
+
+md-card {
+  padding: 6px 8px; }
+
+fieldset {
+  margin: 6px 8px;
+  background-color: #ffffff;
+  border: 1px;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12); }
+  fieldset .replacer {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 36px;
+    color: #c3c2c2; }
+  fieldset legend {
+    font-weight: 700; }
+  fieldset .visible {
+    visibility: visible; }
+  fieldset .invisible {
+    visibility: hidden; }
+
+.repositories .header-wrapper, .reports .header-wrapper {
+  text-align: center; }
+  .repositories .header-wrapper span, .reports .header-wrapper span {
+    color: #000000;
+    font-size: 24px; }
+
+.repositories md-toolbar, .reports md-toolbar {
+  background-color: #c3c2c2;
+  min-height: 48px;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+  padding: 0 16px; }
+  .repositories md-toolbar .to-repos, .reports md-toolbar .to-repos {
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis; }
+
+.repositories md-input-container label, .reports md-input-container label {
+  font-size: 16px;
+  text-align: left;
+  margin-bottom: 0; }
+
+.repositories .table-head, .reports .table-head {
+  font-size: 24px;
+  font-weight: 700;
+  border-bottom: 3px solid #c3c2c2; }
+  .repositories .table-head .head, .reports .table-head .head {
+    margin: 12px 0; }
+
+.repositories .table-row, .reports .table-row {
+  font-size: 16px;
+  font-weight: 400;
+  border-bottom: 1px solid #c3c2c2; }
+  .repositories .table-row .trow, .reports .table-row .trow {
+    margin: 12px 0; }
+  .repositories .table-row .report, .reports .table-row .report {
+    font-weight: 700; }
+    .repositories .table-row .report:hover, .reports .table-row .report:hover {
+      color: #f4511e;
+      cursor: pointer;
+      outline: 0; }

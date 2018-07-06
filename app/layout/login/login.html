@@ -1,0 +1,62 @@
+<div layout-align="center center" class="login container-fluid">
+    <md-card layout-padding>
+        <div class="form-block">
+            <div class="form-logo"></div>
+            <div class="form-head">Sign in to GitHub</div>
+            <form name="vm.form" novalidate ng-submit="vm.login()">
+
+                <div layout="row" layout-align="center center">
+                    <md-input-container class="md-block" flex="100">
+
+                        <label for="login">Username or email address</label>
+                        <input type="text"
+                               id="login"
+                               name="login"
+                               ng-model="vm.user.login"
+                               autocomplete="off"
+                               placeholder=""
+                               required>
+                        <div ng-messages="vm.form.login.$error">
+                            <div class="error-block" ng-message="required">
+                                Login field can not be empty.
+                            </div>
+                        </div>
+                    </md-input-container>
+                </div>
+
+                <div layout="row" layout-align="center center">
+                    <md-input-container class="md-block password" flex="100">
+
+                        <label for="password">Password</label>
+                        <input type="password"
+                               id="password"
+                               name="password"
+                               ng-model="vm.user.password"
+                               autocomplete="off"
+                               placeholder=""
+                               required>
+                        <div ng-messages="vm.form.password.$error">
+                            <div class="error-block" ng-message="required">
+                                Password field can not be empty.
+                            </div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div class="alert" ng-if="vm.message">
+                    {{vm.message}}
+                </div>
+
+                <div layout="row" layout-align="center center">
+                    <md-button flex="100"
+                               type="submit"
+                               class="md-primary md-raised">
+                        LOG IN
+                    </md-button>
+                </div>
+
+            </form>
+        </div>
+    </md-card>
+</div>
+
+

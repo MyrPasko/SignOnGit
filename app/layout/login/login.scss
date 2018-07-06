@@ -1,0 +1,55 @@
+.login {
+  max-height: 100%;
+  max-width: 100%;
+  position: relative;
+
+
+  md-card {
+    width: 500px;
+    margin: 0 auto;
+  }
+
+  label {
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  .error-block {
+    margin: 5px auto;
+    color: #eb1e32;
+  }
+
+  .alert {
+    position: absolute;
+    bottom: 50px;
+    left: 10px;
+    font-size: 18px;
+    color: #eb1e32;
+  }
+
+  .form-block {
+    min-width: 70%;
+    background: rgba(255, 255, 255, 0.7);
+    position: relative;
+    .form-logo {
+      margin: auto;
+      width: 162px;
+      height: 158px;
+      background: url('../assets/images/git-logo-new.png');
+    }
+    .form-head {
+      margin: 20px auto;
+      font-weight: 700;
+      font-size: 24px;
+      text-align: center;
+    }
+    .md-button {
+      margin: 0;
+    }
+    .password {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+

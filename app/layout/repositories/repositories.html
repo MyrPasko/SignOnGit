@@ -1,0 +1,51 @@
+<div class="repositories">
+    <md-toolbar>
+        <div layout="row" layout-align="center center">
+            <div class="header-wrapper" layout="column" flex-offset="15" flex="70">
+                <span flex="100">Find the user on GitHub and choose the repository</span>
+            </div>
+            <md-button class="md-raised md-warn" flex="15" ng-click="vm.logOut()">LOG OUT</md-button>
+        </div>
+    </md-toolbar>
+
+    <md-card class="search" layout="row" layout-align="center start">
+        <md-input-container class="md-block" flex="85">
+            <label for="searchField">Username or email address</label>
+            <input type="text"
+                   id="searchField"
+                   name="searchField"
+                   ng-model="vm.searchField"
+                   placeholder="">
+        </md-input-container>
+        <md-button md-no-ink
+                   class="md-raised md-primary blue-button"
+                   ng-click="vm.getRepos()"
+                   flex="15">
+            FIND USER
+        </md-button>
+        <div class="alert" ng-if="vm.message">
+            {{vm.message}}
+        </div>
+    </md-card>
+
+    <fieldset class="standard" ng-if="vm.listOfRepos">
+        <legend>Repositories of {{vm.userName}}</legend>
+        <div class="table-head" layout="row" layout-align="start start">
+            <div class="head" flex="30">Name</div>
+            <div class="head" flex="55">Url</div>
+            <div class="head" flex="15">Action</div>
+        </div>
+        <div class="table-row" layout="row" layout-align="start start" ng-if="vm.listOfRepos.length > 0"
+        ng-repeat="repo in vm.listOfRepos | orderBy: vm.sortparam ">
+            <div class="trow" flex="30">{{repo.name}}</div>
+            <div class="trow" flex="55">{{repo.url}}</div>
+            <div class="trow report" flex="15" ng-click="vm.chooseRepo(repo)">Create report</div>
+        </div>
+        <div class="table-head replacer" layout="row" layout-align="center center" ng-if="vm.listOfRepos.length === 0">
+            {{vm.userName}} has no repositories yet.
+        </div>
+
+    </fieldset>
+
+
+</div>
